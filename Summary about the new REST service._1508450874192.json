@@ -1,0 +1,92 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "APISFDCTest",
+    "description": "Summary about the new REST service.",
+    "x-lastModified": "Oct 19, 2017 15:04PM PST"
+  },
+  "host": "localhost:8080",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/apitest/{cedula}": {
+      "get": {
+        "description": "SFDC",
+        "operationId": "get-apitest",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "description": "Numero de Cedula del cliente",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "a operationResponse to be returned",
+            "schema": {
+              "$ref": "#/definitions/operationResponse"
+            }
+          }
+        },
+        "summary": "Get que cuenta con logica de integracion con SFDC"
+      }
+    }
+  },
+  "definitions": {
+    "operationResponse": {
+      "type": "object",
+      "required": [
+        "Nombre",
+        "Email",
+        "Telefono",
+        "Apellido",
+        "Descripcion",
+        "Direccion",
+        "Cedula"
+      ],
+      "properties": {
+        "Nombre": {
+          "type": "string"
+        },
+        "Apellido": {
+          "type": "string"
+        },
+        "Descripcion": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Direccion": {
+          "type": "string"
+        },
+        "Telefono": {
+          "type": "string"
+        },
+        "Cedula": {
+          "type": "string"
+        }
+      }
+    },
+    "SchemaTest": {
+      "Nombre": "Juanito",
+      "Apellido": "Perez",
+      "Descripcion": "Cliente Platinum",
+      "Email": "jperez@tibco.com",
+      "Direccion": "95 9-97",
+      "Telefono": "+573194567",
+      "Cedula": "1"
+    }
+  }
+}
